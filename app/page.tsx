@@ -58,9 +58,28 @@ export default function Home() {
 					<div className="bento-item order-5 bento-git">
 						<Github />
 					</div>
-					<div className="order-4">
-						<div>1</div>
-						<div>2</div>
+					<div className="grid grid-cols-2 order-4 gap-2">
+						<div className="grid grid-rows-2 gap-2">
+							<div className="rounded-2xl bg-white p-4 flex flex-col space-y-2 ">
+								<h2 className="text-black text-xl font-bold mb-4">
+									CV / Resume
+								</h2>
+								<button
+									type="button"
+									className="flex w-full rounded-md bg-indigo-50 px-3.5 py-2.5 text-sm font-semibold text-indigo-600 shadow-sm hover:bg-indigo-100"
+								>
+									View
+								</button>
+								<button
+									type="button"
+									className="w-full flex rounded-md bg-indigo-50 px-3.5 py-2.5 text-sm font-semibold text-indigo-600 shadow-sm hover:bg-indigo-100"
+								>
+									Download
+								</button>
+							</div>
+							<div className="rounded-2xl bg-white p-4 flex flex-col space-y-2 "></div>
+						</div>
+						<div className="rounded-2xl bg-white p-4 flex flex-col space-y-2 "></div>
 					</div>
 				</div>
 				<footer>gello</footer>
