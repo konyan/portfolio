@@ -8,14 +8,26 @@ import AboutMe from "./components/AboutMe";
 import OpensourceItem from "./components/OpensourceItem";
 import ToolItem from "./components/ToolItem";
 import Github from "./components/Github";
+import Footer from "./components/Footer";
+import AnimatedGridPattern from "./components/GridPattern";
+import { cn } from "./utils/cn";
 
 export default function Home() {
 	const skills = data.skills.map((skill) => skill.keywords);
 	return (
 		<div className="flex flex-1">
 			<div className="container w-[94%] mx-auto relative">
+				<AnimatedGridPattern
+					numSquares={30}
+					maxOpacity={0.1}
+					duration={3}
+					repeatDelay={1}
+					className={cn(
+						"[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
+						"inset-x-0 inset-y-[-30%] h-[100%] skew-y-12",
+					)}
+				/>
 				<Head />
-
 				<div className="bento">
 					<section className="bento-item relative overflow-hidden order-2 md:order-1">
 						<h2 className="text-black text-xl font-bold mb-4">Opensources</h2>
@@ -77,12 +89,16 @@ export default function Home() {
 									Download
 								</button>
 							</div>
-							<div className="rounded-2xl bg-white p-4 flex flex-col space-y-2 "></div>
+							<div className="rounded-2xl bg-white p-4 flex flex-col space-y-2 ">
+								<h2 className="text-black text-xl font-bold mb-4">Motto</h2>
+							</div>
 						</div>
-						<div className="rounded-2xl bg-white p-4 flex flex-col space-y-2 "></div>
+						<div className="rounded-2xl bg-white p-4 flex flex-col space-y-2 ">
+							<h2 className="text-black text-xl font-bold mb-4">Blogs</h2>
+						</div>
 					</div>
 				</div>
-				<footer>gello</footer>
+				<Footer />
 			</div>
 		</div>
 	);

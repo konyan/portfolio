@@ -1,6 +1,13 @@
+import ShineBorder from "./ShineBorder";
+
 const AboutMe = () => {
 	return (
-		<div>
+		<ShineBorder
+			color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
+			className="relative bento-item  border bg-background md:shadow-xl !bg-white"
+			borderWidth="4"
+			borderRadius="32"
+		>
 			<h2 className="text-black text-xl font-bold mb-4">About me</h2>
 			<div className="text-black bg-gray-300/50 rounded-2xl p-4">
 				I thrive on solving complex problems and developing innovative solutions
@@ -12,7 +19,7 @@ const AboutMe = () => {
 				exploring the potential of Blockchain and mining tech, or devising
 				innovative solutions for mobile applications
 			</div>
-		</div>
+		</ShineBorder>
 	);
 };
 export default AboutMe;
