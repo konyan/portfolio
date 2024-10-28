@@ -1,3 +1,4 @@
+// @ts-nocheck
 import _ from "lodash";
 import * as cheerio from "cheerio";
 
@@ -9,7 +10,7 @@ const COLOR_MAP = {
 	4: "#216e39",
 };
 
-async function fetchYears(username) {
+async function fetchYears(username: any) {
 	const data = await fetch(`https://github.com/${username}?tab=contributions`, {
 		headers: {
 			"x-requested-with": "XMLHttpRequest",
@@ -33,7 +34,7 @@ async function fetchYears(username) {
 		});
 }
 
-async function fetchDataForYear(url, year, format) {
+async function fetchDataForYear(url: string, year: string, format: string) {
 	const data = await fetch(`https://github.com${url}`, {
 		headers: {
 			"x-requested-with": "XMLHttpRequest",

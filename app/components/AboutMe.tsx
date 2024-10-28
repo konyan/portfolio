@@ -5,8 +5,8 @@ const AboutMe = () => {
 		<ShineBorder
 			color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
 			className="relative bento-item  border bg-background md:shadow-xl !bg-white"
-			borderWidth="4"
-			borderRadius="32"
+			borderWidth={4}
+			borderRadius={32}
 		>
 			<h2 className="text-black text-xl font-bold mb-4">About me</h2>
 			<div className="text-black bg-gray-300/50 rounded-2xl p-4">

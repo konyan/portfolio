@@ -1,13 +1,13 @@
+// @ts-nocheck
 import React, { useEffect, useRef, useState } from "react";
 import { getData } from "../utils/api";
-
 const Github = () => {
 	const canvasRef = useRef();
 	const contentRef = useRef();
 	const [loading, setLoading] = useState(false);
 	const [data, setData] = useState(null);
 	const username = "konyan";
-	const theme = "Dracula";
+	const theme = "dracula";
 
 	useEffect(() => {
 		fetchData();
@@ -21,14 +21,12 @@ const Github = () => {
 	}, [data]);
 
 	const fetchData = async () => {
-		const response = await getData(username);
-		console.log("er", response.data);
+		const response = await getData();
 		setData(response.data);
 	};
-
+	/** @jsxIgnore */
 	const draw = async () => {
 		if (!canvasRef.current || !data) {
-			setError("Something went wrong... Check back later.");
 			return;
 		}
 
@@ -40,9 +38,12 @@ const Github = () => {
 			themeName: theme,
 			footerText: "",
 		});
-		contentRef.current.scrollIntoView({
-			behavior: "smooth",
-		});
+		if (contentRef.current) {
+			// @ts-ignore
+			contentRef.current?.scrollIntoView({
+				behavior: "smooth",
+			});
+		}
 	};
 
 	const _renderGraphs = () => {

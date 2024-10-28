@@ -21,7 +21,7 @@ const Head = () => {
 					md:text-lg bg-white shadow-md font-bold text-black"
 						type="button"
 						onClick={() => {
-							window.location = "mailto:devkonyan@gmail.com";
+							window.location.href = "mailto:devkonyan@gmail.com";
 						}}
 					>
 						Contact Me
